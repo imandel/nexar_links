@@ -15,11 +15,3 @@ jobs:
           python-version: 3.8
         run: pip install requests
         run: python scripts/scrape.py
-        run: |
-        echo $EMAIL
-        echo $USERNAME
-      env:
-          EMAIL: ${{ secrets.EMAIL }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
-      
