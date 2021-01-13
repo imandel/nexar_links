@@ -10,7 +10,7 @@ h3_ints = list(h3_ints)
 n=300
 hunks = [h3_ints[x:x+n] for x in range(0, len(h3_ints), n)]
 
-with open(f'data/{yesterday}.csv', 'w') as of:
+with open(f'{yesterday}.csv', 'w') as of:
     csv_writer = csv.writer(of, delimiter=',')
     csv_writer.writerow(['image_ref', 'timestamp', 'lat','lng'])
     for hunk in hunks:
