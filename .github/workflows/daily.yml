@@ -4,13 +4,9 @@ on:
     - cron: '0 5 * * *'
 jobs:
   downlaod-day:
+    name: run
     runs-on: ubuntu-latest
     steps:
-      env:
-        EMAIL: ${{ secrets.EMAIL }} 
-        USERNAME: ${{ secrets.USERNAME }}
-        PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
-
       uses: actions/checkout@v2
       with:
         token: ${{ secrets.PUSH_TOKEN }}
@@ -26,3 +22,7 @@ jobs:
         git config user.email "$EMAIL"
         git commit -am "Updated Nexar"
         git push
+      env:
+          EMAIL: ${{ secrets.EMAIL }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
