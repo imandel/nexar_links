@@ -7,17 +7,17 @@ jobs:
     name: run
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       with:
         token: ${{ secrets.PUSH_TOKEN }}
-      uses: actions/setup-python@v2
+      - uses: actions/setup-python@v2
       with:
         python-version: 3.8
-      run: |
+      - run: |
         pip install requests
-      run: pip install requests
-      run: python scripts/scrape.py
-      run: |
+      - run: pip install requests
+      - run: python scripts/scrape.py
+      - run: |
         git config --global user.name "$USERNAME"
         git config user.email "$EMAIL"
         git commit -am "Updated Nexar"
