@@ -12,8 +12,8 @@ jobs:
         PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
 
       uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PUSH_TOKEN }}
+      with:
+        token: ${{ secrets.PUSH_TOKEN }}
       uses: actions/setup-python@v2
         with:
           python-version: 3.8
