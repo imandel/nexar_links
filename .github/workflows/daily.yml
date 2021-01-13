@@ -26,6 +26,7 @@ jobs:
         run: |
           git config user.name "$USERNAME"
           git config user.email "$EMAIL"
+          git add .
           git commit -am "Updated Nexar"
           git push
 
