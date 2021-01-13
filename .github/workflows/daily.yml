@@ -22,8 +22,6 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
           PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
         run: |
-        echo $EMAIL
-        echo $USERNAME
         git config --global user.name "$USERNAME"
         git config --global user.email "$EMAIL"
         git commit -am "Updated Nexar"
