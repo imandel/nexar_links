@@ -3,16 +3,16 @@ on:
   schedule:
     - cron: '0 5 * * *'
 jobs:
-  downlaod-day:
-    name: run
+  day:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       with:
         token: ${{ secrets.PUSH_TOKEN }}
-      - uses: actions/setup-python@v2
+      uses: actions/setup-python@v2
       with:
         python-version: 3.8
+        
       - run: |
         pip install requests
       - run: pip install requests
