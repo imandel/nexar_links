@@ -7,10 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: scrape 
-        env:
-          EMAIL: ${{ secrets.EMAIL }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.PUSH_TOKEN }}
@@ -25,4 +21,9 @@ jobs:
         git config --global user.email "$EMAIL"
         git commit -am "Updated Nexar"
         git push
+
+      env:
+          EMAIL: ${{ secrets.EMAIL }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
       
