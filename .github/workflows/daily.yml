@@ -15,8 +15,8 @@ jobs:
       with:
         token: ${{ secrets.PUSH_TOKEN }}
       uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+      with:
+        python-version: 3.8
       run: |
         pip install requests
       run: pip install requests
