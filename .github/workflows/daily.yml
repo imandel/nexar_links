@@ -6,12 +6,22 @@ jobs:
   day:
     runs-on: ubuntu-latest
     steps:
-      - name: scrape 
-        uses: actions/checkout@v2
+        - uses: actions/checkout@v2
         with:
           token: ${{ secrets.PUSH_TOKEN }}
-        uses: actions/setup-python@v2
+        - uses: actions/setup-python@v2
         with:
           python-version: 3.8
-        run: pip install requests
-        run: python scripts/scrape.py
+        - run: pip install requests
+        - run: python scripts/scrape.py
+        - run: |
+        echo $EMAIL
+        echo $USERNAME
+        git config --global user.name "$USERNAME"
+        git config --global user.email "$EMAIL"
+        git commit -am "Updated Nexar"
+        git push
+      env:
+          EMAIL: ${{ secrets.EMAIL }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
