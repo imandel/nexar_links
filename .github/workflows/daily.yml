@@ -6,4 +6,13 @@ jobs:
   day:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v2
+      - name: get src
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PUSH_TOKEN }}
+      - name: setup py
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+     
