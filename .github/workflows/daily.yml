@@ -1,8 +1,7 @@
 name: downloader
 on:
-  push:
-    branches:
-      - master
+  watch:
+    types: [started]
   schedule:
     - cron: '0 5 * * *'
 jobs:
