@@ -1,7 +1,7 @@
 name: downloader
 on: 
   schedule:
-    chron: '0 5 * * *'
+    - chron: '0 5 * * *'
 jobs:
   downlaod-day:
     runs-on: ubuntu-latest
