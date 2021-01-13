@@ -21,7 +21,7 @@ jobs:
         run: python scripts/scrape.py
         run: |
         git config --global user.name "$USERNAME"
-        git config user.email "$EMAIL"
+        git config --global user.email "$EMAIL"
         git commit -am "Updated Nexar"
         git push
       
