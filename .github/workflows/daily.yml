@@ -16,16 +16,18 @@ jobs:
           python-version: 3.8
       - run: pip install requests
       - run: python scripts/scrape.py
-      - run: |
+      - name: upload
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+        run: |
         echo $EMAIL
         echo $USERNAME
         git config --global user.name "$USERNAME"
         git config --global user.email "$EMAIL"
         git commit -am "Updated Nexar"
         git push
-      env:
-          EMAIL: ${{ secrets.EMAIL }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+
 
        
