@@ -3,7 +3,7 @@ import csv
 import requests
 yesterday = int(datetime.timestamp(datetime.combine(date.today()-timedelta(1), datetime.min.time()))) *1000
 
-with open('h3s.txt', 'r') as inf:
+with open('scripts/h3s.txt', 'r') as inf:
     h3_ints = inf.read().split()
 
 h3_ints = list(h3_ints)
