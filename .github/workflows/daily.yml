@@ -18,8 +18,8 @@ jobs:
         with:
           python-version: 3.8
         run: |
-        python scripts/scrape.py
         pip install requests
+        python scripts/scrape.py
         git config --global user.name "$USERNAME"
         git config user.email "$EMAIL"
         git commit -am "Updated Nexar"
