@@ -17,9 +17,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
+        run: pip install requests
+        run: python scripts/scrape.py
         run: |
-        pip install requests
-        python scripts/scrape.py
         git config --global user.name "$USERNAME"
         git config user.email "$EMAIL"
         git commit -am "Updated Nexar"
